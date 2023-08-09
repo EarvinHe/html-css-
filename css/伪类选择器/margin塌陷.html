@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>margin塌陷</title>
+    <style>
+        .box0{
+            width: 400px;
+            background-color: gray;
+            /* 如何解决呢？
+             */
+             /* 1.加border */
+             /* border: 1px solid black; */
+             /* 2.加padding */
+             /* padding: 1px; */
+            /* 3.overflow:hidden(最好的) */
+            overflow: hidden;
+        }
+        .inner1{
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+        }
+        .inner2{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            /* 在无其他元素如《span》的作用下，下面这行代码看不到显示出来的样式，
+            会发现并灭有任何变化，应该有的50像素空间并没有显示出来，margin塌陷 */
+            margin-bottom: 50px;
+        }
+        img{
+            border: 1px solid black;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box0">
+        <div class="inner1">第一个盒子</div>
+        <div class="inner2">第二个盒子</div>
+        <!-- <span>zaizhe</span> -->
+        
+    </div><br>
+    
+    <hr>
+    <br><br>
+
+    笔记：<br>
+    <img src="../image-54.png" alt="">
+</body>
+</html>
