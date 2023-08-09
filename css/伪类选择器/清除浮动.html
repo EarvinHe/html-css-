@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>清除浮动影响</title>
+    <style>
+        .box0{
+            width: 400px;
+            background-color: gray;
+            border: 1px solid black;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            padding: 5px;
+            margin: 10px;
+            float: left;
+            /* 浮动将造成父盒子margin塌陷 */
+        }
+        .box0::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="box0">
+        <div class="box inner1">第1个盒子</div>
+        <div class="box inner2">第2个盒子</div>
+        <div class="box inner3">第3个盒子</div>
+        <div class="box inner4">第4个盒子</div>
+        <div class="box inner5">第5个盒子</div>
+    </div>
+    <br>
+    <br>
+    <hr>
+    <img src="../image-67.png" alt="">
+</body>
+</html>
