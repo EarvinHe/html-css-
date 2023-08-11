@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>过渡案例</title>
+    <style>
+        .outer{
+            width: 300px;
+            height: 174.5px;
+            border: 1px solid black;
+            position: relative;
+            overflow: hidden;
+        }
+        .mask{
+            width: 300px;
+            height: 174.5px;
+            border: 1px solid black;
+            background-color: black;
+            color: white;
+            font-size: 60px;
+            text-align: center;
+            line-height: 150px;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: .7s all linear;
+        }
+        .mask:hover{
+            display: block;
+            opacity: 0.5;
+        }
+        img{
+            transition: 0.5s all ;
+        }
+        .outer:hover img{
+            transform: scale(2) rotate(20deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <img src="../images/东京.jpg" width="300px" alt="">
+        <div class="mask">东京</div>
+    </div>
+</body>
+</html>
